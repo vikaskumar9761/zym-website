@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SODDI — Strength &amp; Online Coaching</title>
+<meta name="description" content="Personal training and online fitness coaching by Soddi. Structured programming, nutrition guidance and weekly accountability.">
+<meta name="theme-color" content="#0C0D0B">
+
+<meta property="og:title" content="SODDI — Strength &amp; Online Coaching">
+<meta property="og:description" content="Structured coaching for people who want to get stronger, move better and stay consistent.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  /* Applied before first paint so animated elements start hidden.
+     assets/script.js removes it if GSAP fails to load, so content is never lost. */
+  document.documentElement.classList.add('js-anim');
+</script>
+</head>
+
+<body class="is-loading">
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <div class="pre-inner">
+    <div class="pre-mark">SODDI</div>
+    <div class="pre-count"><span id="preNum">0</span><i>%</i></div>
+  </div>
+  <div class="pre-bar"><i id="preBar"></i></div>
+  <div class="pre-curtain"></div>
+</div>
+
+<!-- ============ CURSOR + PROGRESS ============ -->
+<div class="cursor" id="cursor"><span>view</span></div>
+<div class="scroll-progress"><i id="progressBar"></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top">SODDI<i></i></a>
+
+  <nav class="nav-pill" aria-label="Main">
+    <a href="#about">Coach</a>
+    <a href="#programs">Programs</a>
+    <a href="#process">Method</a>
+    <a href="#pricing">Plans</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <a class="btn btn-solid magnetic nav-cta" href="#book"><span>Start training</span></a>
+
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+    <i></i><i></i>
+  </button>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-links">
+    <a href="#about"><span>Coach</span></a>
+    <a href="#programs"><span>Programs</span></a>
+    <a href="#process"><span>Method</span></a>
+    <a href="#pricing"><span>Plans</span></a>
+    <a href="#faq"><span>FAQ</span></a>
+    <a href="#book"><span>Book a call</span></a>
+  </div>
+  <div class="menu-foot">
+    <a href="https://www.instagram.com/fitness__trainer__soddi_/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+
+    <div class="hero-head">
+      <p class="hero-eyebrow anim-fade">Personal trainer &amp; online coach</p>
+      <h1 class="hero-title">
+        <span class="mask"><span class="word">Train</span></span>
+        <span class="mask"><span class="word hollow">with</span></span>
+        <span class="mask"><span class="word">purpose</span></span>
+      </h1>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-copy anim-fade">
+        <p>Structured coaching for people who are ready to get stronger, move better and finally stay consistent — without random workouts or crash diets.</p>
+        <div class="hero-actions">
+          <a href="#book" class="btn btn-lime magnetic"><span>Book a consultation</span></a>
+          <a href="#programs" class="link-arrow">See the programs</a>
+        </div>
+      </div>
+
+      <figure class="hero-media tilt" data-reveal-img>
+        <div class="hero-media-inner">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=80" alt="Barbell training session" data-parallax="12">
+        </div>
+        <figcaption class="media-chip">Coaching since 2020</figcaption>
+      </figure>
+    </div>
+
+    <div class="hero-foot">
+      <div class="scroll-cue"><i></i> Scroll</div>
+      <div class="hero-mini">
+        <strong>No guesswork.</strong>
+        <span>Every session has a target, every week has a reason.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee">
+      <span>Strength</span><b>✳</b><span>Conditioning</span><b>✳</b><span>Nutrition</span><b>✳</b><span>Mobility</span><b>✳</b><span>Accountability</span><b>✳</b>
+      <span>Strength</span><b>✳</b><span>Conditioning</span><b>✳</b><span>Nutrition</span><b>✳</b><span>Mobility</span><b>✳</b><span>Accountability</span><b>✳</b>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div class="stat-card"><strong data-count="6" data-suffix="+">0</strong><span>Years spent coaching real clients</span></div>
+    <div class="stat-card"><strong data-count="180" data-suffix="+">0</strong><span>Plans written and adjusted</span></div>
+    <div class="stat-card"><strong data-count="100" data-suffix="%">0</strong><span>Programs built around one person</span></div>
+    <div class="stat-card stat-note"><span>Your training should look nothing like someone else's.</span></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about section" id="about">
+    <div class="about-media tilt">
+      <div class="about-media-inner">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" alt="Coach demonstrating a lift" data-parallax="18">
+      </div>
+      <div class="about-badge">
+        <svg viewBox="0 0 100 100" class="badge-ring"><path id="circlePath" fill="none" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/><text><textPath href="#circlePath">Assess · Build · Adapt · Repeat · </textPath></text></svg>
+        <i>✳</i>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <p class="label anim-fade">The coach</p>
+      <h2 class="anim-lines">Your goal, your plan, your standard.</h2>
+      <p class="lead anim-fade">Most people don't fail because they're lazy. They fail because nobody ever told them what the next four weeks should look like. That's the part I handle.</p>
+
+      <ol class="steps">
+        <li class="anim-fade"><b>01</b><div><h3>Assess</h3><p>Training history, injuries, schedule and what you actually enjoy doing.</p></div></li>
+        <li class="anim-fade"><b>02</b><div><h3>Build</h3><p>A progressive plan with clear targets — sets, load, and weekly progression.</p></div></li>
+        <li class="anim-fade"><b>03</b><div><h3>Adapt</h3><p>We review the numbers every week and change what isn't moving.</p></div></li>
+      </ol>
+
+      <a href="#book" class="link-arrow anim-fade">Talk to me first</a>
+    </div>
+  </section>
+
+  <!-- ============ PROGRAMS (pinned horizontal on desktop) ============ -->
+  <section class="programs" id="programs">
+    <div class="programs-head">
+      <div>
+        <p class="label">Programs</p>
+        <h2>Pick the track that matches where you are right now.</h2>
+      </div>
+      <p class="programs-note">Not sure which one fits? Send a message and we'll pick the starting point together.</p>
+    </div>
+
+    <div class="programs-viewport">
+      <div class="programs-track" id="programsTrack">
+
+        <article class="p-card">
+          <header><span>01</span><i>↗</i></header>
+          <h3>Fat loss &amp; recomposition</h3>
+          <p>Conditioning, resistance training and a calorie approach you can actually hold for six months.</p>
+          <ul><li>3–5 sessions a week</li><li>Habit-based nutrition</li><li>Weekly photo &amp; weight review</li></ul>
+          <a href="#book" class="p-link">Start here</a>
+        </article>
+
+        <article class="p-card p-card-hi">
+          <header><span>02</span><i>↗</i></header>
+          <h3>Strength &amp; muscle</h3>
+          <p>Progressive overload done properly — squat, press, hinge and pull, tracked week by week.</p>
+          <ul><li>4–5 sessions a week</li><li>Load &amp; volume tracking</li><li>Recovery and sleep guidance</li></ul>
+          <a href="#book" class="p-link">Start here</a>
+        </article>
+
+        <article class="p-card">
+          <header><span>03</span><i>↗</i></header>
+          <h3>Online coaching</h3>
+          <p>Train at your own gym with a plan built for its equipment, plus check-ins that keep you honest.</p>
+          <ul><li>Train anywhere</li><li>Video form checks</li><li>Chat support on WhatsApp</li></ul>
+          <a href="#book" class="p-link">Start here</a>
+        </article>
+
+        <article class="p-card">
+          <header><span>04</span><i>↗</i></header>
+          <h3>Beginner reset</h3>
+          <p>For a first gym month: technique, confidence on the floor, and a routine that doesn't burn you out.</p>
+          <ul><li>3 sessions a week</li><li>Technique-first coaching</li><li>Simple food starting points</li></ul>
+          <a href="#book" class="p-link">Start here</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS / GALLERY ============ -->
+  <section class="work section" id="results">
+    <div class="work-head">
+      <p class="label">On the floor</p>
+      <h2 class="anim-lines">Technique first. Intensity second. Progress always.</h2>
+    </div>
+
+    <div class="work-grid">
+      <figure class="w-card w-tall" data-reveal-img>
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1100&q=80" alt="Strength training" data-parallax="20">
+        <figcaption><span>Strength</span><strong>Built, not given</strong></figcaption>
+      </figure>
+
+      <figure class="w-card" data-reveal-img>
+        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1100&q=80" alt="Coaching session" data-parallax="14">
+        <figcaption><span>Consistency</span><strong>Show up, level up</strong></figcaption>
+      </figure>
+
+      <figure class="w-card" data-reveal-img>
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1100&q=80" alt="Conditioning work" data-parallax="14">
+        <figcaption><span>Mindset</span><strong>Discipline buys freedom</strong></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="process section" id="process">
+    <div class="process-intro">
+      <p class="label">The method</p>
+      <h2 class="anim-lines">Four phases, repeated until the results stop surprising you.</h2>
+      <p class="lead">A good coaching experience removes uncertainty. Every phase has a purpose and every change has a reason behind it.</p>
+      <a href="#book" class="btn btn-lime magnetic"><span>Start phase one</span></a>
+    </div>
+
+    <ol class="timeline">
+      <div class="timeline-line"><i id="timelineFill"></i></div>
+      <li class="t-step"><b>01</b><div><h3>Discover</h3><p>A call about your goal, schedule, past training and what has gone wrong before.</p></div></li>
+      <li class="t-step"><b>02</b><div><h3>Design</h3><p>Your split, progression targets and a nutrition framework you can live with.</p></div></li>
+      <li class="t-step"><b>03</b><div><h3>Execute</h3><p>Train with intent. Log the numbers. Send form videos when something feels off.</p></div></li>
+      <li class="t-step"><b>04</b><div><h3>Evolve</h3><p>Review the data, break the plateau, raise the target and run it back.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ QUOTE BREAK ============ -->
+  <section class="quote-break">
+    <div class="quote-media"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80" alt="" data-parallax="26"></div>
+    <blockquote class="anim-lines">Don't wait for motivation. Build the discipline that works without it.</blockquote>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="voices section">
+    <p class="label">Client voice</p>
+    <div class="voice-box">
+      <div class="voice-slides" id="voiceSlides">
+        <blockquote class="v-slide is-active">
+          <p>Consistency got easier the moment I stopped guessing what to do every week.</p>
+          <footer>Client story · Strength coaching</footer>
+        </blockquote>
+        <blockquote class="v-slide">
+          <p>The biggest change wasn't physical. Training finally had structure and a clear target.</p>
+          <footer>Client story · Online coaching</footer>
+        </blockquote>
+        <blockquote class="v-slide">
+          <p>I train around a full-time job now and still progress. The plan bends, I don't break.</p>
+          <footer>Client story · Fat loss</footer>
+        </blockquote>
+      </div>
+      <div class="voice-nav" id="voiceNav">
+        <button class="is-active" aria-label="Story 1"></button>
+        <button aria-label="Story 2"></button>
+        <button aria-label="Story 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing section" id="pricing">
+    <div class="pricing-head">
+      <p class="label">Coaching options</p>
+      <h2 class="anim-lines">Three ways to work together.</h2>
+    </div>
+
+    <div class="price-grid">
+      <article class="price-card tilt">
+        <h3>Foundation</h3>
+        <p class="p-sub">For a first structured block.</p>
+        <div class="p-amount">₹<b>—</b><small>/ month</small></div>
+        <ul><li>Goal and movement assessment</li><li>Personalised training plan</li><li>Basic nutrition framework</li><li>One check-in a week</li></ul>
+        <a href="#book" class="btn btn-ghost">Enquire</a>
+      </article>
+
+      <article class="price-card price-hi tilt">
+        <div class="p-tag">Most requested</div>
+        <h3>Transform</h3>
+        <p class="p-sub">The full coaching experience.</p>
+        <div class="p-amount">₹<b>—</b><small>/ month</small></div>
+        <ul><li>Everything in Foundation</li><li>Progressive programming</li><li>Nutrition and habit coaching</li><li>Weekly progress review call</li></ul>
+        <a href="#book" class="btn btn-solid">Enquire</a>
+      </article>
+
+      <article class="price-card tilt">
+        <h3>Elite</h3>
+        <p class="p-sub">High-touch, competition ready.</p>
+        <div class="p-amount">₹<b>—</b><small>/ month</small></div>
+        <ul><li>1:1 coaching, high contact</li><li>Plan adjusted as often as needed</li><li>Priority WhatsApp support</li><li>Detailed performance tracking</li></ul>
+        <a href="#book" class="btn btn-ghost">Enquire</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq section" id="faq">
+    <div class="faq-head">
+      <p class="label">FAQ</p>
+      <h2 class="anim-lines">Before you message me.</h2>
+    </div>
+
+    <div class="accordion" id="accordion">
+      <div class="acc-item is-open">
+        <button aria-expanded="true">Do I need gym experience?<i></i></button>
+        <div class="acc-panel"><p>No. Plans are written for your current level, your equipment and how many days you can realistically train.</p></div>
+      </div>
+      <div class="acc-item">
+        <button aria-expanded="false">How does online coaching work?<i></i></button>
+        <div class="acc-panel"><p>You get a written plan, video references for each lift, weekly check-ins and form feedback over WhatsApp.</p></div>
+      </div>
+      <div class="acc-item">
+        <button aria-expanded="false">Will the plan fit my schedule?<i></i></button>
+        <div class="acc-panel"><p>Yes. Session count and length are designed around your week — three focused days beats five you skip.</p></div>
+      </div>
+      <div class="acc-item">
+        <button aria-expanded="false">Do I have to follow a strict diet?<i></i></button>
+        <div class="acc-panel"><p>No crash diets. We start from what you already eat and adjust in small steps you can keep up.</p></div>
+      </div>
+      <div class="acc-item">
+        <button aria-expanded="false">How do I start?</button>
+        <div class="acc-panel"><p>Message on WhatsApp or Instagram with your goal. We'll do a short consultation and go from there.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOK ============ -->
+  <section class="book" id="book">
+    <div class="book-inner">
+      <p class="label">Take the first step</p>
+      <h2 class="anim-lines">Tell me your goal. We'll work out the next step together.</h2>
+      <div class="book-actions">
+        <a class="btn btn-dark magnetic" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><span>Message on WhatsApp</span></a>
+        <a class="btn btn-outline magnetic" href="https://www.instagram.com/fitness__trainer__soddi_/" target="_blank" rel="noopener"><span>Instagram</span></a>
+      </div>
+      <small>Replace the WhatsApp number in index.html before launch.</small>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="foot-top">
+    <p>Build a body. Build a standard.</p>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/fitness__trainer__soddi_/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+  <div class="foot-mark" id="footMark">SODDI</div>
+  <div class="foot-bottom">
+    <span>© <span id="year">2026</span> SODDI Fitness</span>
+    <span>Personal training · Online coaching</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.14c-.25.69-1.44 1.32-1.99 1.4-.53.08-1.2.11-1.94-.12-.45-.14-1.02-.33-1.76-.65-3.1-1.34-5.12-4.47-5.28-4.68-.15-.21-1.26-1.67-1.26-3.19s.8-2.27 1.08-2.58c.28-.31.61-.39.82-.39.2 0 .41 0 .59.01.19.01.44-.07.69.53.25.6.85 2.08.93 2.23.08.15.13.33.02.54-.1.21-.16.34-.31.52-.15.18-.32.4-.46.54-.15.15-.31.32-.13.62.18.31.79 1.3 1.69 2.11 1.16 1.03 2.14 1.35 2.45 1.5.31.15.49.13.67-.08.18-.21.77-.9.98-1.21.2-.31.41-.26.69-.15.28.1 1.76.83 2.07.98.31.15.51.23.59.36.08.13.08.75-.17 1.44z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
